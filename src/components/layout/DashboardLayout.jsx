@@ -1,5 +1,5 @@
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function DashboardLayout({ children }) {
     const { user, logout } = useAuth();
@@ -33,11 +33,11 @@ export default function DashboardLayout({ children }) {
 
                             {/* Navigation Links */}
                             <div className="hidden md:ml-10 md:flex md:space-x-8">
-                                <a href="/dashboard" className="text-accent border-b-2 border-accent px-1 pt-1 text-sm font-semibold uppercase tracking-wide">Dashboard</a>
+                                <Link to="/dashboard" className="text-accent border-b-2 border-accent px-1 pt-1 text-sm font-semibold uppercase tracking-wide">Dashboard</Link>
                                 {user?.role === 'contractor' && (
                                     <>
-                                        <a href="/clients" className="text-white hover:text-accent hover:border-accent border-b-2 border-transparent px-1 pt-1 text-sm font-semibold uppercase tracking-wide transition-colors">Clients</a>
-                                        <a href="/projects" className="text-white hover:text-accent hover:border-accent border-b-2 border-transparent px-1 pt-1 text-sm font-semibold uppercase tracking-wide transition-colors">Projects</a>
+                                        <Link to="/clients" className="text-white hover:text-accent hover:border-accent border-b-2 border-transparent px-1 pt-1 text-sm font-semibold uppercase tracking-wide transition-colors">Clients</Link>
+                                        <Link to="/projects" className="text-white hover:text-accent hover:border-accent border-b-2 border-transparent px-1 pt-1 text-sm font-semibold uppercase tracking-wide transition-colors">Projects</Link>
                                     </>
                                 )}
                             </div>

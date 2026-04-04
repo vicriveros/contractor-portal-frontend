@@ -64,6 +64,16 @@ export const clientsAPI = {
         const response = await api.post('/clients', data);
         return response.data;
     },
+
+    update: async (id, data) => {
+        const response = await api.patch(`/clients/${id}`, data);
+        return response.data;
+    },
+
+    delete: async (id) => {
+        const response = await api.delete(`/clients/${id}`);
+        return response.data;
+    },
 };
 
 // Projects API
